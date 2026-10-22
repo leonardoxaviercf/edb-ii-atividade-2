@@ -1,6 +1,8 @@
 #ifndef AVL_TREE_HPP
 #define AVL_TREE_HPP
 
+#include "BalancedTree.hpp"
+
 class AVLTree : public BalancedTree {
 private:
     struct Node {
@@ -19,7 +21,7 @@ private:
     int getBalanceFactor(Node* node) const;
     void updateHeight(Node* node);
 
-    // Rotações puras
+    // Rotações puras (sem incrementar métricas diretamente para evitar contagem dupla nas rotações duplas)
     Node* rotateRight(Node* y);
     Node* rotateLeft(Node* x);
 
